@@ -43,3 +43,5 @@ try:
     print(d)
 except:
     print(f"variable {d} is not initialized with any value")
+
+print("the informal_introduction is completed")
