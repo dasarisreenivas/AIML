@@ -47,3 +47,4 @@ firstname,secondname = input("enter the firstname and second name").split(" ")
 print(f"first name : {firstname} and second name : {secondname}")
 # we can also use the map() function which maps the input values to the resppective variable for taking the multiple inputs  of integer data we use the map() function
 a,b = map(int(input("enter the a and b values").split()))
+print(a+ " " +b)
