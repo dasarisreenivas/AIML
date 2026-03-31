@@ -51,3 +51,20 @@ c = 2j+111111111j #in python we should take only j character as the imaginary pa
 print(type(c))
 print(c.real) #it will print real part of complex number
 print(c.imag) #it will print the imaginary part of complex number
+
+#Boolean datatype : boolean datatype variable will the hold the values 1 or 0 
+# 1 = True
+# 0 = False
+
+ #values are equal but object position in the heap are different
+x = 0
+y = False
+print(x==y)
+#different heap memory
+print (id(x))
+print(id(y))
+
+if(id(x)==id(y)):
+    print("equal")
+else:
+    print("locations are not equal")
