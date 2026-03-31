@@ -131,3 +131,61 @@ match number:
         print(f"the number is {number}")
     case _:
         print("other number")
+
+#Internal execution of conditional statements
+#let us consider an example
+
+x = 10
+
+if x > 5:
+    print("Greater")
+else:
+    print("Smaller")
+
+#step1: code is converted to byte code and that byte code is executed by the PVM(Python virtual Machine)
+    #Load x
+    #Load 5
+    #Compare >
+    #JUMP_IF_FALSE To else
+
+#Step2 : condition is evaluated
+    #Fetch value of X(10)
+    #compare with 5
+    #Result -> True
+    #Note : in python always converts condition into boolean(True or False)
+#Step3 : Truth Value Testing
+ #True --> execute the block
+ #False --> skip the block
+ #Note : 0,None,"",[] -> treated as False and Non-zero and non-empty are treated as True
+
+#Stepp4 : Control flow jumping
+    #if Condition is True execute print("Greater") and skips the else block
+    #if Coondition id False Python jumps to else block
+    #above things will be done using the instructions in bytecode
+    # POP_JUMP_IF_FALSE
+    # JUMP_FORWARD
+#Internal flow diagram
+# Start
+#   ↓
+# Evaluate Condition (x > 5)
+#   ↓
+# True? ─── Yes ───→ Execute IF block
+#   │
+#   No
+#   ↓
+# Execute ELSE block
+#   ↓
+# End
+
+#Behind the Code exceutinn\
+#Python uses the Stack Based Execution
+   #values pushed to stack
+   #operation performed
+   #result popped
+
+   #Example 
+   #Push 10
+   #Push 5
+   #Compare >
+   #Push True
+   #POP the result
