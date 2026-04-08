@@ -63,4 +63,42 @@ print(a==b) #compare the values
 #Memory Allocation 
 
 a = 10
-b = 10 #both a and b 
+b = 10 #both a and b point to the same object
+print(id(a))
+print(id(b))
+
+#Mutable vs Immutable
+#mutable means which can be changable example : int,float, string, tuple 
+#Immutable means which cannot be changable
+
+a = 10
+b = a    #here a and b are pointed to the same object
+print(id(a))
+print(id(b))
+a = a+5 # here new object is created because the value of a incremenrted to 5 and new object is creted
+print(id(a))
+
+#mutable Objects : Changeable 
+
+a = [1,2,3]
+print(id(a))
+a.append(4)
+print(id(a)) #There is no change in the memory address \
+#mutable means objects cannot be created on the change
+
+#Immutable
+a = (1,2,3)
+print(a)
+print(id(a))
+a = a+(4,)
+print(a)
+print(id(a))  #here the new object is created
+
+#python will have the same memory address for smaller values but for larger values might get either true or false
+a = 100
+b = 100
+print (a is b)
+
+a = 10000000000000000000000000000000
+b = 10000000000000000000000000000000
+print (a is b)
