@@ -75,3 +75,112 @@ for i in range(5):
         print(i)
 
 # else statement with for loop
+print("else block with for")
+for i in range(5):
+    print(i)
+else:
+    print("no breAK")
+
+for i in range(5):
+    print(i)
+    break
+else:
+    print("No Break")
+
+#example pprogra : check if an array consists of even numbers
+
+def checkNumbers(lis):
+    for i in lis:
+        if i%2 == 0 :
+            print("list contain even number")
+            break
+    else:
+        print("array does not contain any even number")
+
+checkNumbers([1,2,3,4])
+checkNumbers([1,3])
+
+#for loop with enumerate() 
+#enumerate function in python is used to loop over an iterable and get both the index and element at the same time
+#enumerate() retuns an object that pproduces pairs in the form(index,element)
+#rnumerate() will remove the need of manually maintained counter variable during iteration
+
+#internal execution of enumerate()
+fruits = ["grapes","orange","apple"]
+#step1 : converts the iterable to iterator
+it = iter(fruits)
+#step2 : store start value default value is 0
+count = 0
+# or 
+enumerate(fruits,start=1)
+
+#step3 : onevery next()
+# 1. get next item from iterator
+# 2. return tuple(count,item)
+# 3. increase count
+
+#actual enumerate()
+
+for i, fruit in enumerate(fruits):
+    print(i,fruit)
+
+#actuall implementation
+
+index = 0
+for i in fruits:
+    print(index,i)
+    index = index +1
+#some other example with enumerate()
+
+for i,fruit in enumerate(fruits,start = 2):
+    print(i,fruit)
+
+#printin in the list format
+
+lis = list(enumerate(fruits))
+print(lis)
+
+#prin the elelments like next(e)
+
+e = enumerate(fruits)
+print(next(e))
+print(next(e))
+print(next(e))
+
+
+#nested for loop
+
+# syntax:
+# for var in iterator:
+    #for var in iterator:
+        #Statements
+        #pass
+
+for i in range(1,4):
+    for  j in range(1,4):
+        print(i,j)
+
+# iterating over list,tuple, string and dictionary
+
+#list
+lis = ["sree","nivas","dasari"]
+for i in lis:
+    print(i)
+#tuple
+tup = ["sreenivas","dasari"]
+for i in tup:
+    print(i)
+
+#string 
+s = "sreenivas"
+for ch in s:
+    print(ch)
+
+#dictionary
+dic = dict({'x':123,'y':124})
+for i in dic:
+    print("%s %d" % (i,dic[i]))
+
+s = {1,2,3,5}
+for i in s:
+    print(i)
