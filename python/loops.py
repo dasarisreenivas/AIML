@@ -184,3 +184,66 @@ for i in dic:
 s = {1,2,3,5}
 for i in s:
     print(i)
+
+#while Loop
+#while loop is used to execute the block of statements repeatedly until a condition is satisfied
+#Syntax : 
+#while <Condition/Expression>:
+#   statements
+#example
+count = 0
+while count<3:
+    print(count)
+    count = count + 1
+
+#while loop with continue statement
+#continue statement returns the control begining of loop
+#example : print all characters in the string except 'e' and 's'
+a = "sreenivasulu dasari"
+i = 0
+while i<len(a):
+    if a[i] == 's'  or a[i] == 'e':
+        i +=1
+        continue
+    print(a[i])
+    i +=1
+
+#while loop with break statement
+#break statement brings control out of the loop
+#example ; breaking the statement when character 'd' is found
+a  = "sreenivasulu dasari"
+i = 0
+while i<len(a):
+    if a[i] == 'd':
+        i +=1
+        break
+    print(a[i])
+    i +=1
+
+#while loop with the pass statement
+#to write the empty loops we use the pass statement
+#example 
+a = "sreenivasulu"
+i = 0
+while i< len(a):
+    i = i+1
+    pass
+print("the value of i is ",i)
+
+#while loop with else
+
+i = 0
+while i<5:
+    i = i+1
+    print(i)
+    if i ==2:
+        break
+else:
+    print("No break")
+
+i = 0
+while i<5:
+    i = i+1
+    print(i)
+else:
+    print("No break")
