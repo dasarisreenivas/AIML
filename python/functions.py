@@ -17,8 +17,8 @@
 #Example perfom the Calculator operations using the methods
 
 def fun_cal():
-    a = int(input("Enter the number1 "))
-    b = int(input("Enter the numnber2 "))
+    a = int(input("Enter the number1"))
+    b = int(input("Enter the numnber2"))
 
     operation = input("ch0ose the operation add,sub,mul and div")
 
@@ -50,3 +50,82 @@ def div(a,b):
     return a/b
 
 fun_cal()
+
+#Function Arguments 
+# Arguments are the values passed inside the parenthesis of the function when function is called. A funtion can have any number of arguments
+# syntax:
+# 
+# def function(parameters): # parameters are the variables in the function definition
+#       """Doc String """ #  to describe the function
+#       #body of the function
+#       return expression
+# function(arguments) # function call (actual values are passed during the function call)
+
+#parameters and  arguments are different but they are related.
+
+# FEATURE          PARAMETERS              ARGUMENTS
+# where used       function defination     function call
+# what they are    variables               Actual values
+# Example          def fun(a,b)            fun(5,2)
+
+#Example :
+
+def add(a,b):
+    """this is the addition of two numbers function"""
+    return (a+b)
+print (add(5,6))
+
+#There are different types of arguments they are :
+#1. positional arguments
+#2. keyword arguments
+#3. Default arguments
+#4. variable-length arguments (*args, **kwargs)
+
+#1. positional arguments : values are assigned to parameters based on their order in the function call
+# syntax : 
+# def function(parameter1,paremeter2):
+#   statemets
+#   return
+# function(value of parameter1, value of parameter2)
+ 
+def nameage(name,age):
+    for i in range(1,3):
+        match i:
+            case 1:
+                print("I am ",name)
+                print("My age ",age)
+            case 2:
+                print("I am ", age)
+                print("My age ",name)
+nameage("srinivas",19)
+
+#Memory view of positional arguments
+
+#Python uses "call by Object reference" also "call by sharing"
+#which means varibles don't store values directly
+#They store the refernces(address) to object in memory
+
+
+def nameage(name_parameter,age):
+    print(id(name_parameter)) #to check the memory address
+    for i in range(1,3):
+        match i:
+            case 1:
+                print("I am ",name_parameter)
+                print("My age ",age)
+            case 2:
+                print("I am ", age)
+                print("My age ",name_parameter)
+name = "Srinivas"
+nameage(name,19)
+print(id(name)) #to check the address of the name 
+#here name refernce to object "Srinivas" in the memory
+# name_parameter points to same object
+
+#another example
+def fun(x):
+    print(id(x))
+    x = x +5
+a = 10
+fun(a)
+print(id(a))
