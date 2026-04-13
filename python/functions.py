@@ -16,40 +16,40 @@
 
 #Example perfom the Calculator operations using the methods
 
-def fun_cal():
-    a = int(input("Enter the number1"))
-    b = int(input("Enter the numnber2"))
+# def fun_cal():
+#     a = int(input("Enter the number1"))
+#     b = int(input("Enter the numnber2"))
 
-    operation = input("ch0ose the operation add,sub,mul and div")
+#     operation = input("ch0ose the operation add,sub,mul and div")
 
-    match operation:
-        case "add":
-            return print(add(a,b))
-        case "mul":
-            return print(mul(a,b))
-        case "sub":
-            return print(sub(a,b))
-        case "div":
-            return print(sub(a,b))
+#     match operation:
+#         case "add":
+#             return print(add(a,b))
+#         case "mul":
+#             return print(mul(a,b))
+#         case "sub":
+#             return print(sub(a,b))
+#         case "div":
+#             return print(sub(a,b))
 
-def add(*objects):
-    sum = 0
-    for obj in objects:
-        sum +=obj
-    return sum
-def sub(a,b):
-    return a-b
-def mul(*objects):
-    product = 0
-    for obj in objects:
-        product *=  obj
-    return product
-def div(a,b):
-    if(b==0):
-        return "Invalid input"
-    return a/b
+# def add(*objects):
+#     sum = 0
+#     for obj in objects:
+#         sum +=obj
+#     return sum
+# def sub(a,b):
+#     return a-b
+# def mul(*objects):
+#     product = 0
+#     for obj in objects:
+#         product *=  obj
+#     return product
+# def div(a,b):
+#     if(b==0):
+#         return "Invalid input"
+#     return a/b
 
-fun_cal()
+# fun_cal()
 
 #Function Arguments 
 # Arguments are the values passed inside the parenthesis of the function when function is called. A funtion can have any number of arguments
@@ -104,7 +104,7 @@ nameage("srinivas",19)
 #Python uses "call by Object reference" also "call by sharing"
 #which means varibles don't store values directly
 #They store the refernces(address) to object in memory
-
+#here the order must be correct wwe cant palce the name value in the age and vice versa
 
 def nameage(name_parameter,age):
     print(id(name_parameter)) #to check the memory address
@@ -129,3 +129,10 @@ def fun(x):
 a = 10
 fun(a)
 print(id(a))
+
+#2. Keyword arguments : values are passed by explicitly specifying the parameter names, so the order does'nt matter
+
+def fun_ka(name ,age ):
+    print(f" name : {name}  and age : {age}")
+fun_ka(name = "sreenivas", age= "20")
+fun_ka(age = "20",name = "chanti") # order is does'nt matter here unlike positional arguments
