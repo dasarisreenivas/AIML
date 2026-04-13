@@ -136,3 +136,16 @@ def fun_ka(name ,age ):
     print(f" name : {name}  and age : {age}")
 fun_ka(name = "sreenivas", age= "20")
 fun_ka(age = "20",name = "chanti") # order is does'nt matter here unlike positional arguments
+
+# 3. Default Argument : A default argument is a parameter that assumes a default value if the value is not provided in the function call for that argument
+# we assign the default value in the fumction definition
+def fun_def(name,age = 18):
+    """Here the age is default value"""
+    print(f"name {name} age {age}")
+fun_def("sreenivas") # here one parameter is missing the here default value is assigned to the age
+fun_def("sreenivas",20) # here no default value is assigned
+
+#another example for the default argument
+def fun_defar(name = "sreenivas",age = 21):
+    print(f"name : {name} age : {age}")
+fun_defar()
