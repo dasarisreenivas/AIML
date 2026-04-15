@@ -149,3 +149,40 @@ fun_def("sreenivas",20) # here no default value is assigned
 def fun_defar(name = "sreenivas",age = 21):
     print(f"name : {name} age : {age}")
 fun_defar()
+
+#Arbitrary Arguments : 
+#Allow a function to accept a variable number of inputs this is done using the two special symbols
+#they are : *args and **kwargs (these are allso called the variable argument lengths)
+#*args and **kwargs are used to allow functions to accept an arbitrary number of arguments. these features provide great flexibility when 
+#designing the functions that need to handle a varying number of inputs
+
+#Non-Keyword arguments(*args)
+# *args allowws to pass any number of positional(non keyword) arguments to a function
+# these arguments are collected in a tuple. which means we can loop through them or use then with duilt-in functions
+#example : 
+def arg_fun(*args):
+
+    for arg in args:
+        print( arg)
+arg_fun("sreenivas","chanti","dasari")
+
+def sum_marks(*args):
+    print(sum(args))
+sum_marks(1,2,3,4,5,6)
+
+#KeyWord Arguments: 
+# **kwargs allows us to pass any number of keyword arguments(arguments in the form key=value) these arguments are collected in the dictionary
+#key = argument name
+#values = argument values
+
+def kwarg_fun(**kwargs):
+    for key, value in kwargs.items():
+        print(key,value)
+kwarg_fun(name ="sreenivas",age = "10")
+
+#combination of both *args and **kwargs
+
+def com_fun(*args,**kwargs):
+    print("details : ",args)
+    print("subjects : ",kwargs)
+com_fun("sreenivas","dasari",subject1 = "DBMS",subject2 = "CN")
