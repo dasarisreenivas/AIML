@@ -186,3 +186,54 @@ def com_fun(*args,**kwargs):
     print("details : ",args)
     print("subjects : ",kwargs)
 com_fun("sreenivas","dasari",subject1 = "DBMS",subject2 = "CN")
+
+#functin within functions
+# A function defined inside a function is called an inner function. it can access the variables from the enclosing function scope
+def outter_funn():
+    a = 10
+    def inner_fun():
+        b = 10
+        print( "local variable value b is :",b)
+        print(" enclosed variable value a is :",a)
+    inner_fun()
+    #local varibal of inner function is not accessable by outter function but inner function can access the local varible of the outer function
+outter_funn()
+
+#Anonymous Functions
+#An anonymus function means that a function is without a name. As we know, def keyword is used to define the normal function and lambda key word is used to create anonymous function
+
+def c1(x) : return x*x*x #noraml function
+c2 = lambda x : x*x*x #anonmous function
+
+print("normal function",c1(2))
+print("anonymous function",c2(2))
+
+#lambda functions : lambda functions are the small abonymous functions, means they do not have a defined name. these are small ,short-lived functions used to pass the simple logic to another function
+#lambda contains only one expressino
+#result of that expression is returned automatically (no return keyword is needed)
+#syntax 
+# (function_name) = lambda (argument) : (expression)
+a = "sreenivasulu"
+
+res = lambda a : a.upper()
+print(res(a))
+
+#Use Cases of lambda 
+#1. Using with condition checking
+#A lambda function can use conditions to return different results based on condition
+check = lambda x : "positive " if x>0 else "Negative" if x<0 else "Zero"
+print(check(1))
+check = lambda x : "even" if x%2==0 else "odd"
+print(check(10))
+
+#using with List comprehension
+
+fun = [lambda arg = x : arg *10 for x in range(1,5)]
+
+for i in fun:
+    print(i())
+#to print the numbers which are the even numbers between the range
+
+fun1 = [lambda arg = i,i=i:arg*10 if i % 2 == 0 else arg for i in range(1,11)]
+for i in fun1:
+    print(i())
