@@ -237,3 +237,36 @@ for i in fun:
 fun1 = [lambda arg = i,i=i:arg*10 if i % 2 == 0 else arg for i in range(1,11)]
 for i in fun1:
     print(i())
+
+#3. using for Returning Multiple Results
+#Although a lambda can contain only one expression, it can stil return multiple results by combining them into a tuple
+
+cal = lambda x,y : (x+y,x*y)
+res = cal(2,3)
+print(res)
+
+cal = lambda x,y : (x+y,x-y,x*y,x/y,x//y,x%y)
+lis = []
+res = cal(2,3) # here the result is stored in the tuple
+for i in range(len(res)): lis.append(res[i]) if res[i]%2 == 0 else lis.append(res[i]%2)
+print(lis)
+
+#internal behaviour of filter()
+#Syntax: filter(function,iterable)
+#internal implementation
+# for item in iterable:
+#     if function(item):
+#         yield item
+
+#Example filtering the multiples of 2 from the list using the lambda expression
+
+lis = [1,2,3,4,5,6,7,8,9,10,11]
+func = filter(lambda x : x%2==0, lis)
+print(list(func))
+
+#using the map()
+
+a = [1,2,3,5,6]
+
+res= map(lambda x : x*10, a)
+print(list(res))
