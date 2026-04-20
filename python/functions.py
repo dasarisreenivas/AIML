@@ -270,3 +270,4 @@ a = [1,2,3,5,6]
 
 res= map(lambda x : x*10, a)
 print(list(res))
+
