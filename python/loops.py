@@ -135,12 +135,11 @@ for i in fruits:
 for i,fruit in enumerate(fruits,start = 2):
     print(i,fruit)
 
-#printin in the list format
+#printing in the list format
 
 lis = list(enumerate(fruits))
 print(lis)
-
-#prin the elelments like next(e)
+#print the elelments like next(e)
 
 e = enumerate(fruits)
 print(next(e))
