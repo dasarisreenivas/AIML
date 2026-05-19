@@ -9,7 +9,7 @@
 # A for loop can iterate over any iterable object like list,tuple, dictionary,set or custom iterator
 
 #syntax 
-# for vavr in iterator:
+# for var in iterator:
     #Statements
     ##pass
 s = ["hi","hello","bye"]
@@ -30,7 +30,7 @@ for ch in s:
 # range(start_value,stop_value,step_value) : generates from the start_value to stop_value and incrementing by the step_value
 
 
-#print ing from 0 to n-1 
+#printing from 0 to n-1 
 n = 4
 print("single argument range() function")
 for i in range(n):
@@ -87,7 +87,7 @@ for i in range(5):
 else:
     print("No Break")
 
-#example pprogra : check if an array consists of even numbers
+#example program : check if an array consists of even numbers
 
 def checkNumbers(lis):
     for i in lis:
@@ -102,8 +102,8 @@ checkNumbers([1,3])
 
 #for loop with enumerate() 
 #enumerate function in python is used to loop over an iterable and get both the index and element at the same time
-#enumerate() retuns an object that pproduces pairs in the form(index,element)
-#rnumerate() will remove the need of manually maintained counter variable during iteration
+#enumerate() retuns an object that produces pairs in the form(index,element)
+#enumerate() will remove the need of manually maintained counter variable during iteration
 
 #internal execution of enumerate()
 fruits = ["grapes","orange","apple"]
