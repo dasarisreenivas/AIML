@@ -9,7 +9,7 @@
 #Syntax :
 # def function_ name(parameters):
 #     statements
-# #     return expression
+#     return expression
 # def fun():
 #     print("Hello World")
 # fun()
@@ -130,7 +130,7 @@ a = 10
 fun(a)
 print(id(a))
 
-#2. Keyword arguments : values are passed by explicitly specifying the parameter names, so the order does'nt matter
+#2. Keyword arguments : values are passed by exp licitly specifying the parameter names, so the order does'nt matter
 
 def fun_ka(name ,age ):
     print(f" name : {name}  and age : {age}")
@@ -157,8 +157,8 @@ fun_defar()
 #designing the functions that need to handle a varying number of inputs
 
 #Non-Keyword arguments(*args)
-# *args allowws to pass any number of positional(non keyword) arguments to a function
-# these arguments are collected in a tuple. which means we can loop through them or use then with duilt-in functions
+# *args allows to pass any number of positional(non keyword) arguments to a function
+# these arguments are collected in a tuple. which means we can loop through them or use then with built-in functions
 #example : 
 def arg_fun(*args):
 
@@ -192,7 +192,7 @@ com_fun("sreenivas","dasari",subject1 = "DBMS",subject2 = "CN")
 def outter_funn():
     a = 10
     def inner_fun():
-        b = 10
+        b = 10 
         print( "local variable value b is :",b)
         print(" enclosed variable value a is :",a)
     inner_fun()
@@ -200,7 +200,7 @@ def outter_funn():
 outter_funn()
 
 #Anonymous Functions
-#An anonymus function means that a function is without a name. As we know, def keyword is used to define the normal function and lambda key word is used to create anonymous function
+#An anonymus function means that a function is without a name. As we know, def keyword is used to define the normal function and lambda keyword is used to create anonymous function
 
 def c1(x) : return x*x*x #noraml function
 c2 = lambda x : x*x*x #anonmous function
@@ -208,7 +208,7 @@ c2 = lambda x : x*x*x #anonmous function
 print("normal function",c1(2))
 print("anonymous function",c2(2))
 
-#lambda functions : lambda functions are the small abonymous functions, means they do not have a defined name. these are small ,short-lived functions used to pass the simple logic to another function
+#lambda functions : lambda functions are the small anonymous functions, means they do not have a defined name. these are small ,short-lived functions used to pass the simple logic to another function
 #lambda contains only one expressino
 #result of that expression is returned automatically (no return keyword is needed)
 #syntax 
@@ -263,6 +263,7 @@ print(lis)
 lis = [1,2,3,4,5,6,7,8,9,10,11]
 func = filter(lambda x : x%2==0, lis)
 print(list(func))
+print(type(func))
 
 #using the map()
 
