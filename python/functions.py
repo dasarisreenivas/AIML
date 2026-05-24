@@ -272,3 +272,68 @@ a = [1,2,3,5,6]
 res= map(lambda x : x*10, a)
 print(list(res))
 
+
+#First-class Functions
+#In python<functions are treated as first-class objects.
+#This means they can be used just like numbers, Strings, or any other variables
+
+'''
+* Assign function to variables 
+def fun() :
+    #expressions
+a = fun
+print(a(arguments))
+* Passing the functions as arguments to another function
+* Returning functions from Other functions
+* storing functions in dataStructures
+'''
+
+# 1> Asigning the function to variables
+def greet(name):
+    print(f"Hello {name}!")
+fun_variable = greet
+fun_variable("chanti")
+# here the greet and fun_variable ppointed to the same address of the function obect
+'''
+    Name Space                                 The Heap
+{'greet' : 0X1234ab0} --------------
+                                    |------>  0X1234ab0
+fun_variable ----------------------
+'''
+# 2> passinng function as an argument
+
+def msg(name):
+    return f"Hello, {name}!"
+def fun1(fun2,name):
+    return fun2(name)
+print(fun1(msg,"Allex"))
+
+#higher order function
+# Higher order functions means a fun which takes the fun as argument and return the function
+def greet(uppercaser):
+    return uppercase("hello")
+def uppercase(text):
+    return text.upper()
+print(greet(uppercase))
+
+#3> Returning function from other function:
+# A function can return another function allowing for the creation of function factories
+
+def fun1(msg):
+    def fun2():
+        return f"{msg}"
+    return fun2
+fun = fun1("Hello world!")
+print(fun())
+
+#eg2:
+
+def greet(language):
+    def message(name):
+        if language == "english":
+            return f"Hello ,{name}"
+        else: return f"Hello, {name}"
+    return message
+fun = greet("english") # here the fun is pointed to the  functional Object of message function 
+res = fun("ram")
+print(res)
