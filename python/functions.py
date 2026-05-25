@@ -337,3 +337,35 @@ def greet(language):
 fun = greet("english") # here the fun is pointed to the  functional Object of message function 
 res = fun("ram")
 print(res)
+
+#4> Storing the function in the data structure
+#function can be stored in the data structure like list,dictionary,tuple etc
+
+def add(x,y):
+    return (x+y)
+def prod(x,y):
+    return (x*y)
+
+#Storing the functions in the dictionary
+d = {
+
+    "add" : add,
+    "product": prod
+}
+print(d["add"](5,3))
+print(d["product"](5,3))
+#Storing the function in the list
+def div(a,b):
+    return a/b
+def sub(a,b):
+    return a-b
+lis =[]
+lis.append(div)
+lis.append(sub)
+lis.append(add)
+lis.append(prod)
+
+print(lis[0](1,2))
+print(lis[1](1,2))
+print(lis[2](1,2))
+print(lis[3](1,2))
