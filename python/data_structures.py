@@ -78,3 +78,26 @@ first = "hello"
 second = "world!"
 print(first+" "+second)
 print(first * 3)
+
+# 'in' membership operator in the strings
+'''The in Operator checks if a specific substring exists anywhere inside another String. it evaluates an Expresion and returns a boolean value'''
+'''eg ; '''
+text = "The Quick brown Fox"
+print("Text"  in text)
+print("Quick" in text)
+
+#Why 'in' not .find() function?
+'''The in Operator reads liek Plain English and Strictly returns the True/False which prevents logical bugs with checking -1'''
+if text.find("brown"):
+    print("Found it")
+if "brown" in text:
+    print("Found it")
+
+#'not in' operator 
+
+'''the Not in operator works quite exactly opposite to the 'in' opperator it returns True if the SUbstring or String is not present in the target String '''
+def process_email(emailaddress):
+    if '@' not in emailaddress:
+        return "Invalid Email Address format"
+    return "Valid email Address format"
+print(process_email("adbkajdbf@gmail.com"))
