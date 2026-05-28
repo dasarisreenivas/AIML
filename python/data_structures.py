@@ -35,3 +35,46 @@ print(s[-2])
 print(s[-3])
 
 #If we try to acces the character out of the string length it will throw an IndexError Exception
+
+#Slicing 
+'''slicing is the Extraction of a substring using the index values from the Existing string'''
+'''Syntax for slicing : String[start:stop:step]'''
+'''start : The index where the slice begins( start is a inclusive value) default value is 0
+   stop  : The index wher the slice ends just before the one step value default value is length of the String len(String)
+   step  : Here the step value decides the How many characters to jump forwad default value will be 1
+'''
+'''we can also slice the string with negative index value also'''
+word = "PYTHON PROGRAMMING"
+print(word[0:len(word)])
+print(word[7:10: ])
+print(word[:6:])
+print(word[0:10:2])
+print(word[-4:-1:2])
+print(word[::-1])
+#String Immutability
+'''In Pythoin Strings are the immutable which means we cannot the change the stirng one it is created
+we cannot add,delete,remove or change the character of the string if we cahange the String new String object is Created
+'''
+word = "Python"
+# word[0] = "J" here it will throw an Exception no new Object is Created we cannot change the existing String we can change the String Inderictly where the new Object is Created
+# print (word)
+
+'''Indirectly changing the String '''
+word = "J"+ word[1::]  #here the new string object is created
+print(word)
+
+"""
+NameSpace                           HeapArea
+word -> 1000                    1000 -> "python"
+
+                                    100 -> "J"
+
+word -> 2000                    2000 -> "Jython"  after concating the String "J" and SubString word[1::]
+"""
+#Common String Oppperation
+#1. Concatenation and repetition 
+'''we can concatenete the two Strings using the '+' operator after concatenating the two Stirings a new String Object is Created'''
+first = "hello"
+second = "world!"
+print(first+" "+second)
+print(first * 3)
