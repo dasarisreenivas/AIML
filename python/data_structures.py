@@ -184,6 +184,59 @@ NameSpace              heap memory
 name --- 2000       1000--- "Sreenivasulu123-"
 
                     2000 --- "SREENIVAULU123-"
-
-
 '''
+#upper() vs isUpper()
+'''upper is used to transform the entire string to the uppercase
+isupper is used to check the string where all the characters of the String are uppercase the return value is boolean value
+'''
+sentence = "Hello"
+print(sentence.isupper()) #False
+print(sentence.upper())  #HELLO
+print((sentence.upper()).isupper()) #TRUE
+
+#lower() : it is  quite opoposite to the upper() method and islower() method is quite opposite to the isupper()
+# lower() method will do the same operations what ever the upper() method do in the opposite manner
+#strip() / Strip(args)
+'''The strip() method primary job is to trim the unwanted characters from the extrem end of the String
+very begining of the String and very ending of the string.
+strip() method will allow passing the arguments if we does not pass the arguments the default argument eill be the ehitespace
+strip() method will remove the special characters like "\n and \t" without arguments
+
+''' 
+text = "    Hello World    "
+print(text.strip())
+text = "\n     Hello world    \t"
+print(text.strip())
+
+'''as String is immutable string will not change the existing string python will create a new String object after 
+removing the extrem end and begining charaters and that object need to be referenced to the variable if not garbage 
+collector will remove the newly created string object'''
+
+#eg with parameter
+text = "...!!!Python???!!!"
+print(text)
+text = text.strip("!.?nP")
+print(text)
+
+'''sometimes it will remove the whole word instead of the only specified word to remove safely we can use the method removeprefix(prefix that to be remove passed as argument)
+and removesuffix(suffix that to be removed passed as the argument)'''
+sentence = "www.google.com"
+print(sentence.strip("www.com"))
+
+print((sentence.removeprefix("www.")).removesuffix(".com"))
+
+'''sometimes we only want to remove on leftside of the string or right side of the string so python provides the 
+two companion methods they are lstrip() and rstrip() here also we can pass arguments and the default value will be the white space
+'''
+text = "0000240000"
+print(text.lstrip("0"))
+print(text.rstrip("0"))
+
+#real world use case
+
+user_input = "  alice " 
+
+if user_input.strip()=="alice":
+    print("correct input")
+else:
+    print("check youe input")
