@@ -101,3 +101,48 @@ def process_email(emailaddress):
         return "Invalid Email Address format"
     return "Valid email Address format"
 print(process_email("adbkajdbf@gmail.com"))
+
+#String Methods
+#common String Methods
+#1> len(String) : 
+'''len() function is the built-in function in python, it works on the diifferent data types like list,tuple,set,sets,dictionary aand String
+when the len() function is applied to the String it will count the total number of characters
+'''
+s = "Hello"
+print(len(s))
+
+'''len() funvtion counts everthing not only the visible characters it will consider the white spaces 
+escape characters and special charaters
+'''
+sentence = "hello, World"
+print(len(sentence)) #here as we observe space is also consider as the the charcters
+
+spaces = "     "
+print(len(spaces))
+
+empty = ""
+print(len(empty))
+
+'''python uses the backslash(/) to the special escape character like "\n" even though we type the two characters for 
+the escape character python will interprets them as a single character'''
+sentence = "ab\nc"
+print(len(sentence))
+sentence = "ab\n c"
+print(len(sentence))
+
+#Function vs method
+'''AS we discuss earlier len() is abuilt in function not a string method
+    * we dont use the period notation eg sentence.len()
+    * we wrap the function around the string eg len(sentence)
+Python Strings are the objects that track their own scale.len() never count the characters manually
+it simply queries the objects internal size meta data
+
+   size = 5     #this is the metadata of an Stirng object
+   =========
+   "HELLO"      #this is the String Object
+
+   time complexity for the len() will be the O(1) because it will not traverse the entire String it will get the data from the metadata 
+   for manual iteration it takes the O(n)
+   
+'''
+
