@@ -240,3 +240,5 @@ if user_input.strip()=="alice":
     print("correct input")
 else:
     print("check youe input")
+
+#join()
