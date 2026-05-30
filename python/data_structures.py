@@ -143,6 +143,47 @@ it simply queries the objects internal size meta data
 
    time complexity for the len() will be the O(1) because it will not traverse the entire String it will get the data from the metadata 
    for manual iteration it takes the O(n)
-   
 '''
+#upper() 
+'''upper() method will take the String and transform the all lower case charaters to the Uppercase
+upper() will not take any arguments simply we can call it on the existing String(a vriable holding a String) using the dot notation
+here non-alphabetical and Existing Uppercase letters will be ignored or they will be in the by-pass track.
+'''
+name = "Sreenivasulu123-"
+print(name.upper())
 
+'''as String are immutable means they cannot be changed once the upper() method is applied new String Object is created by holding the uppercase characters after that 
+we need a variable to store the transformed String if the transformed string object is not reference to any variable garbage collector will clean the uppper() String Object
+'''
+name = "Sreenivasulu123-"
+name.upper() 
+print(name)
+
+name = "Sreenivasulu123-"
+upper_name = name.upper()
+name = name.upper()
+print(upper_name)
+
+'''
+befor : 
+NameSpace              heap memory
+-----------------------------------
+name --- 1000       1000--- "Sreenivasulu123-"
+
+
+inprocess : name.upper()
+
+NameSpace              heap memory
+-----------------------------------
+name --- 1000       1000--- "Sreenivasulu123-"
+
+                    2000 --- "SREENIVAULU123-"
+after 
+NameSpace              heap memory
+-----------------------------------
+name --- 2000       1000--- "Sreenivasulu123-"
+
+                    2000 --- "SREENIVAULU123-"
+
+
+'''
