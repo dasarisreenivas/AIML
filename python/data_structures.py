@@ -282,3 +282,36 @@ Now Python knows the final size it wil ask the operating system and asks for a s
 
 phase 2 : Python loops through the list second time,using first c level memory copy command(memcpy) where all the characters will be droped into the perfectly sized memory block
 '''
+#split()/split(args)/split(args,maxlimit)
+'''the .split method is the exact oppposite of the .join() it is a demolition tool for the string
+/it takes one long string and breaks it apart into a list of smaller strings based on a specific seperator
+
+the default .split() means method without any arguments will automatically removes the newline characters and tab space character (/t) will be treated them as default value
+here the default value is the white space 
+'''
+word = 'hello python welcome'
+print(word.split())
+word = '    hello\npython\twelcome' #it will trim the extra spaces over the string
+print(word.split())
+
+'''split(args) method will splilt the string when that argument hits in the string 
+this method mostly used with the csv file (comma seperated value ) file 
+'''
+csv = "apple,banana,orange,grapes"
+print(csv.split(','))
+#maxsplit parameter
+'''
+some times we only want to split the string a certain number of times and leave the rest of the string intact
+we can do this by passing the second argument an integer called the maxsplit
+'''
+
+log_file = "ERRPR : 404 : Page not found ont the server"
+result = log_file.split(":",1)
+print(result)
+
+#The empty string trap
+'''the split() method that is looking for a seperator does not exist in the string it will make the list with with the single element
+that single element is the original string
+'''
+s = "this is original string"
+print(s.split('z'))
