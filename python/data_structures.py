@@ -241,4 +241,44 @@ if user_input.strip()=="alice":
 else:
     print("check youe input")
 
-#join()
+#join(Iterable):
+'''The .join() method job is to take a collection(list,tuple,sets etc,.) of seprated Strings
+and stich them into a single string
+Syntax = result_string = seperator.join(iterable)
+'''
+words = ["python", "is","good"]
+res = " ".join(words)
+print(res)
+res = ''.join(words)
+print(res)
+res  = '-'.join(words)
+print(res)
+
+'''the join method is very strict about one thing that a collection(list,tuple, etc ..) elements must be a String other if we
+try to join the numericals it will throw an error Type Error'''
+
+numbers = ["one",2,"Three"]
+# print(" ".join(numbers))    this will throw an error
+
+#we can overcome the error by using the generator expression
+
+res = " ".join(str(x) for x in numbers)
+print(res)
+
+'''in terms of performance .join() is better than + 
+
+using + is perfectly fine for two or three strings however every time we use +  repeatedly brand new Strig Object will be created because of strings are immutable
+suppose there are 10000 thousand Strings in the iterable use + it will slow down the performance but where as in the .join() is highly optimized in C under hood 
+.join() method will calculate thre total memory needed exactly once and place all the strings inside and return it instantly
+.join(0 works in two Phases
+
+Phase 1 : The Measurement Phase
+instead of building the String away python will loop through the iterable to measure everything
+    * it checks the every single item in the iterable whether it is a String or not if not it will throw an TYPE ERROR
+    * it count the exact lelngth of each String in the iterable
+    * it count the how many times the seperator will be used
+    * it calculates the exact total number of bytes that final string will be required
+Now Python knows the final size it wil ask the operating system and asks for a single block of memory exactly the string needed or required
+
+phase 2 : Python loops through the list second time,using first c level memory copy command(memcpy) where all the characters will be droped into the perfectly sized memory block
+'''
