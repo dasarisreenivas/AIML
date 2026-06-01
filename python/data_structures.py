@@ -114,8 +114,8 @@ print(len(s))
 '''len() funvtion counts everthing not only the visible characters it will consider the white spaces 
 escape characters and special charaters
 '''
-sentence = "hello, World"
-print(len(sentence)) #here as we observe space is also consider as the the charcters
+sentance = "hello, World"
+print(len(sentance)) #here as we observe space is also consider as the the charcters
 
 spaces = "     "
 print(len(spaces))
@@ -125,15 +125,15 @@ print(len(empty))
 
 '''python uses the backslash(/) to the special escape character like "\n" even though we type the two characters for 
 the escape character python will interprets them as a single character'''
-sentence = "ab\nc"
-print(len(sentence))
-sentence = "ab\n c"
-print(len(sentence))
+sentance = "ab\nc"
+print(len(sentance))
+sentance = "ab\n c"
+print(len(sentance))
 
 #Function vs method
 '''AS we discuss earlier len() is abuilt in function not a string method
-    * we dont use the period notation eg sentence.len()
-    * we wrap the function around the string eg len(sentence)
+    * we dont use the period notation eg sentance.len()
+    * we wrap the function around the string eg len(sentance)
 Python Strings are the objects that track their own scale.len() never count the characters manually
 it simply queries the objects internal size meta data
 
@@ -189,10 +189,10 @@ name --- 2000       1000--- "Sreenivasulu123-"
 '''upper is used to transform the entire string to the uppercase
 isupper is used to check the string where all the characters of the String are uppercase the return value is boolean value
 '''
-sentence = "Hello"
-print(sentence.isupper()) #False
-print(sentence.upper())  #HELLO
-print((sentence.upper()).isupper()) #TRUE
+sentance = "Hello"
+print(sentance.isupper()) #False
+print(sentance.upper())  #HELLO
+print((sentance.upper()).isupper()) #TRUE
 
 #lower() : it is  quite opoposite to the upper() method and islower() method is quite opposite to the isupper()
 # lower() method will do the same operations what ever the upper() method do in the opposite manner
@@ -220,10 +220,10 @@ print(text)
 
 '''sometimes it will remove the whole word instead of the only specified word to remove safely we can use the method removeprefix(prefix that to be remove passed as argument)
 and removesuffix(suffix that to be removed passed as the argument)'''
-sentence = "www.google.com"
-print(sentence.strip("www.com"))
+sentance = "www.google.com"
+print(sentance.strip("www.com"))
 
-print((sentence.removeprefix("www.")).removesuffix(".com"))
+print((sentance.removeprefix("www.")).removesuffix(".com"))
 
 '''sometimes we only want to remove on leftside of the string or right side of the string so python provides the 
 two companion methods they are lstrip() and rstrip() here also we can pass arguments and the default value will be the white space
@@ -315,3 +315,58 @@ that single element is the original string
 '''
 s = "this is original string"
 print(s.split('z'))
+
+#.replace(old substring, new Substring)/ .replace(old substring, new substring,count)
+'''the replace method is used to swap the old substring with new substring. replace() method works like find the and replace 
+means replace() method initially needs to find the old string and after that it need to replace the new string in place of the old string
+ '''
+sentance = "I have cats. cats are good"
+print(sentance.replace("cats","dogs"))
+
+'''the return type of the .replace() method will be the string means it will create the new String object after placing the new substring inplaceof old String'''
+sentance  = "I have dogs, ddogs are good"
+sentance.replace("dogs","cats") # here the objbect is created 
+print(sentance)   # here no change in the sentence 
+sentance = sentance.replace("dogs","cats")
+print(sentance)  #Here the sentance is changed
+
+'''by default it will scan the string from left to right and replace the every single instance 
+with new instance if finds'''
+
+'''sometimes we dont wnat to replace all the old string but we need to replace only some of them 
+then we use the third argument in the method that is integer that we nned to specy for how many times we can replace the 
+substring'''
+
+text="apple apple apple apple"
+text = text.replace('apple',"orange",2)
+print(text)
+'''method chaning : here we can do the method chaining because the return type of the .replace() is string we can immediately apply the 
+.replace()
+'''
+my_test = "Th1a 1s s0m3 t3xt"
+new_test = my_test.replace("1","i").replace("0","o").replace("3","e")
+print(new_test)
+'''chain method becomes inefficient for the bulk replcements to make it efficient we use the 
+.maketrans() and .translate()
+
+if the old string is not found after searching it does not crash or throw any exception it wil simply copy the exact copy of the String
+'''
+text  = "Hello! world"
+print(text.replace("python","java"))
+
+#max() when we use the max() function in the strings it looks at the lexicographical order based on each character ASCII/Unicodes
+
+word = "python"
+print(max(word))
+
+'''max(0 function with the key parameter
+the default behaviour of max() is sometinmes works differently if you want to find the longest string in a list rather than the one that comes last inaplpabetiical order
+'''
+list = ["cat","gold","silver"]
+print(max(list, key = len))
+
+people = [
+    {"name" : "john","age":20},
+    {"name" : "zoe","age" : 40}
+]
+print(max(people , key = lambda x : x["age"] ))
